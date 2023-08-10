@@ -1,0 +1,10 @@
+<p>cv-form works!</p>
+<button (click)="setCvDatasource()">INJECT LAYOUT</button>
+
+
+<input type="file" (change)="onImageSelected($event)" accept="image/png, image/jpeg">
+
+<!-- <img *ngIf="selectedImage" [src]="getObjectURL(selectedImage)">
+<p>{{selectedImage?.name}}</p> -->
+
+<app-cv-layout [datasource]="cv"></app-cv-layout>
