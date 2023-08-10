@@ -1,0 +1,7 @@
+fieldset {
+  padding: 10px;
+}
+
+fieldset .row {
+  margin-bottom: 10px;
+}

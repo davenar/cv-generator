@@ -14,19 +14,18 @@ export class CvLayoutComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log(this.datasource);
   }
 
 
 
-printJSON(data: any): string{
-const prettyJson = JSON.stringify(data, null, 2);
-return prettyJson;
-}
+  printJSON(data: any): string {
+    const prettyJson = JSON.stringify(data, null, 2);
+    return prettyJson;
+  }
 
 
 
- ngOnDestroy() {
+  ngOnDestroy() {
     if (this.datasource.photo) {
       URL.revokeObjectURL(this.datasource.photo);
     }

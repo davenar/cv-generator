@@ -7,13 +7,16 @@ import { CVModel } from 'src/app/contracts/cv-model';
   styleUrls: ['./cv-form.component.css']
 })
 export class CvFormComponent implements OnInit {
-  cv: CVModel = {};
+  cv: CVModel = {
+    experience: [],
+    skills: [],
+    spokenLanguages: []
+  };
 
   constructor() { }
 
 
   ngOnInit(): void {
-    console.log(this.cv);
   }
 
   onImageSelected(event: any) {
@@ -21,10 +24,10 @@ export class CvFormComponent implements OnInit {
     if (file) {
       const allowedTypes = ['image/jpeg', 'image/png'];
       if (allowedTypes.includes(file.type)) {
-          const imageFile: File = event.target.files[0];
-          const imgUrl = this.getObjectURL(imageFile);
-          console.log(imgUrl);
-          this.cv.photo = imgUrl;
+        const imageFile: File = event.target.files[0];
+        const imgUrl = this.getObjectURL(imageFile);
+        console.log(imgUrl);
+        this.cv.photo = imgUrl;
       }
       else {
         // Tipo di file non valido, mostra un messaggio all'utente.
@@ -38,8 +41,8 @@ export class CvFormComponent implements OnInit {
   }
 
 
-  setCvDatasource(){
-this.cv.email = "pippo"
+  setCvDatasource() {
+    this.cv.email = "pippo"
   }
 
   // ngOnDestroy() {

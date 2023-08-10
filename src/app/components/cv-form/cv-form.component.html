@@ -7,4 +7,54 @@
 <!-- <img *ngIf="selectedImage" [src]="getObjectURL(selectedImage)">
 <p>{{selectedImage?.name}}</p> -->
 
+
+
+<fieldset>
+  <legend>Dati Anagrafici</legend>
+  <div class="row">
+    <div class="col-6">
+      <div class="form-group">
+        <label for="firstName">Nome:</label>
+        <input [(ngModel)]="cv.firstName" type="text" class="form-control" id="firstName" placeholder="Inserisci Nome">
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="lastName">Cognome:</label>
+        <input [(ngModel)]="cv.lastName" type="text" class="form-control" id="lastName" placeholder="Inserisci Cognome">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="form-group">
+        <label for="email">E-Mail:</label>
+        <input [(ngModel)]="cv.email" type="email" class="form-control" id="email" placeholder="Inserisci E-Mail">
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="phoneNumber">Numero di Telefono:</label>
+        <input [(ngModel)]="cv.phoneNumber" type="tel" class="form-control" id="phone" placeholder="Inserisci Numero di Telefono">
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+
+
+
+<div class="row">
+  <div class="col-6">
+
+  </div>
+  <div class="col-6">
+
+  </div>
+</div>
+
+
+
+
+
 <app-cv-layout [datasource]="cv"></app-cv-layout>

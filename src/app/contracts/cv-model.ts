@@ -6,32 +6,33 @@ export interface CVModel {
   birthDate?: string;
   address?: Address;
   email?: string;
+  phoneNumber?: string;
   experience?: Experience[];
   skills?: Skill[];
   spokenLanguages?: Language[];
 }
 
 export interface Experience {
-  title: string;
-  description: string;
-  startDate: Date;
-  endDate: Date;
+  title?: string;
+  description?: string;
+  startDate?: Date;
+  endDate?: Date;
 }
 
 export interface Skill {
-  name: string;
+  name?: string;
 }
 
 export interface Language {
-  name: string;
-  level: LanguageLevel;
+  name?: string;
+  level?: LanguageLevel;
 }
 
 export interface Address {
-  streetName: string;
-  streetNumber: string;
-  city: string;
-  zipCode: string;
+  streetName?: string;
+  streetNumber?: string;
+  city?: string;
+  zipCode?: string;
 }
 
 export enum LanguageLevel {
