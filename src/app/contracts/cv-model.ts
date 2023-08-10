@@ -4,12 +4,12 @@ export interface CVModel {
   jobTitle?: string;
   photo?: string;
   birthDate?: string;
-  address?: Address;
+  address: Address;
   email?: string;
   phoneNumber?: string;
-  experience?: Experience[];
-  skills?: Skill[];
-  spokenLanguages?: Language[];
+  experience: Experience[];
+  skills: Skill[];
+  spokenLanguages: Language[];
 }
 
 export interface Experience {

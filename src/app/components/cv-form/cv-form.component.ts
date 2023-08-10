@@ -10,7 +10,8 @@ export class CvFormComponent implements OnInit {
   cv: CVModel = {
     experience: [],
     skills: [],
-    spokenLanguages: []
+    spokenLanguages: [],
+    address: {}
   };
 
   constructor() { }

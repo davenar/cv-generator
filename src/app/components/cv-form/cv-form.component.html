@@ -1,8 +1,6 @@
-<p>cv-form works!</p>
-<button (click)="setCvDatasource()">INJECT LAYOUT</button>
+<!-- <button (click)="setCvDatasource()">INJECT LAYOUT</button> -->
 
 
-<input type="file" (change)="onImageSelected($event)" accept="image/png, image/jpeg">
 
 <!-- <img *ngIf="selectedImage" [src]="getObjectURL(selectedImage)">
 <p>{{selectedImage?.name}}</p> -->
@@ -12,30 +10,86 @@
 <fieldset>
   <legend>Dati Anagrafici</legend>
   <div class="row">
-    <div class="col-6">
+    <div class="col-4">
       <div class="form-group">
         <label for="firstName">Nome:</label>
         <input [(ngModel)]="cv.firstName" type="text" class="form-control" id="firstName" placeholder="Inserisci Nome">
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-4">
       <div class="form-group">
         <label for="lastName">Cognome:</label>
         <input [(ngModel)]="cv.lastName" type="text" class="form-control" id="lastName" placeholder="Inserisci Cognome">
       </div>
     </div>
+    <div class="col-4">
+      <div class="form-group">
+        <label for="jobTitle">Titolo di Lavoro:</label>
+        <input [(ngModel)]="cv.jobTitle" type="text" class="form-control" id="jobTitle"
+          placeholder="Inserisci Titolo di Lavoro">
+      </div>
+    </div>
   </div>
   <div class="row">
-    <div class="col-6">
+    <div class="col-4">
       <div class="form-group">
         <label for="email">E-Mail:</label>
         <input [(ngModel)]="cv.email" type="email" class="form-control" id="email" placeholder="Inserisci E-Mail">
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-3">
       <div class="form-group">
         <label for="phoneNumber">Numero di Telefono:</label>
-        <input [(ngModel)]="cv.phoneNumber" type="tel" class="form-control" id="phone" placeholder="Inserisci Numero di Telefono">
+        <input [(ngModel)]="cv.phoneNumber" type="tel" class="form-control" id="phone"
+          placeholder="Inserisci Numero di Telefono">
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="form-group">
+        <label for="birthDate">Data di Nascita:</label>
+        <input [(ngModel)]="cv.birthDate" type="date" class="form-control" id="birthDate"
+          placeholder="Inserisci Data di Nascita">
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="form-group">
+        <label for="photo">Foto:</label>
+        <input [(ngModel)]="cv.photo" type="file" class="form-control" id="photo" placeholder="Carica Foto"
+          (change)="onImageSelected($event)" accept="image/png, image/jpeg">
+        <small id="emailHelp" class="form-text text-muted">Carica file con estensione *.jpeg, *jpg, *.png</small>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>Indirizzo</legend>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+        <label for="streetName">Via:</label>
+        <input [(ngModel)]="cv.address.streetName" type="text" class="form-control" id="streetName"
+          placeholder="Inserisci Via">
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="form-group">
+        <label for="streetNumber">Numero Civico:</label>
+        <input [(ngModel)]="cv.address.streetNumber" type="text" class="form-control" id="streetNumber"
+          placeholder="Inserisci Num. Civico">
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="form-group">
+        <label for="city">Città:</label>
+        <input [(ngModel)]="cv.address.city" type="text" class="form-control" id="city" placeholder="Inserisci Città">
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="form-group">
+        <label for="zipCode">CAP:</label>
+        <input [(ngModel)]="cv.address.zipCode" type="text" class="form-control" id="zipCode"
+          placeholder="Inserisci CAP">
       </div>
     </div>
   </div>
@@ -43,18 +97,18 @@
 
 
 
-
 <div class="row">
-  <div class="col-6">
+  <div class="col-4">
 
   </div>
-  <div class="col-6">
+  <div class="col-4">
 
   </div>
 </div>
 
 
 
+<!-- <input type="file" (change)="onImageSelected($event)" accept="image/png, image/jpeg"> -->
 
 
 <app-cv-layout [datasource]="cv"></app-cv-layout>
