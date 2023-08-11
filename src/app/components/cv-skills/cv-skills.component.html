@@ -1,0 +1,33 @@
+<!-- FORM -->
+<div class="row">
+  <div class="col-9">
+    <div class="form-inline">
+      <input [(ngModel)]="skill.name" type="text" class="form-control" id="addSkill"
+        placeholder="Inserisci Skill da aggiungere">
+    </div>
+  </div>
+  <div class="col-3">
+    <button class="btn btn-primary me-2" (click)="addItem()" [disabled]="!skill.name">
+      <i class="bi bi-plus-circle"></i>
+      AGGIUNGI
+    </button>
+    <button class="btn btn-secondary" (click)="clearItem()">
+      <i class="bi bi-x-circle"></i>
+      PULISCI
+    </button>
+  </div>
+</div>
+
+<!-- CHIPS -->
+<div class="row mt-2">
+  <div class="col-12">
+    <div *ngFor="let skill of skills;" class="chip-container me-2 mb-2">
+      <span>
+        {{skill.name}}
+      </span>
+      <span class="chip-delete ms-1" (click)="removeItem(skill)">
+        <i class="bi bi-x-lg"></i>
+      </span>
+    </div>
+  </div>
+</div>

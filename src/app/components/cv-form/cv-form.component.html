@@ -95,7 +95,10 @@
   </div>
 </fieldset>
 
-
+<fieldset>
+  <legend>Skill</legend>
+  <cv-skills [skills]="cv.skills"></cv-skills>
+</fieldset>
 
 <div class="row">
   <div class="col-4">
@@ -111,4 +114,4 @@
 <!-- <input type="file" (change)="onImageSelected($event)" accept="image/png, image/jpeg"> -->
 
 
-<app-cv-layout [datasource]="cv"></app-cv-layout>
+<cv-layout [datasource]="cv"></cv-layout>

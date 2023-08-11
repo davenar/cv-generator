@@ -2,7 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CVModel } from 'src/app/contracts/cv-model';
 
 @Component({
-  selector: 'app-cv-layout',
+  selector: 'cv-layout',
   templateUrl: './cv-layout.component.html',
   styleUrls: ['./cv-layout.component.css']
 })
