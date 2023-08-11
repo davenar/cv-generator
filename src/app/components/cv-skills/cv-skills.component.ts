@@ -9,7 +9,6 @@ import { Skill } from 'src/app/contracts/cv-model';
 export class CvSkillsComponent {
   @Input() skills: Skill[] = [];
   skill: Skill = {};
-  isAdding: boolean = false;
 
   addItem() {
     this.skills.push(this.skill);

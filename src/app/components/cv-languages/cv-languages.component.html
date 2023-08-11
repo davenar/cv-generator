@@ -1,0 +1,56 @@
+<!-- FORM -->
+<div class="row">
+  <div class="col-4">
+    <div class="form-inline">
+      <input [(ngModel)]="language.name" type="text" class="form-control" id="addLanguageName"
+        placeholder="Inserisci Lingua da aggiungere">
+    </div>
+  </div>
+  <div class="col-2">
+    <select *ngIf="!isCustomLevel" class="form-select" id="levelSelect" [(ngModel)]="language.level"
+      name="selectedLevel">
+      <option [value]="undefined" [selected]="language.level === undefined" disabled>Seleziona Livello...</option>
+      <option *ngFor="let level of languageLevels" [value]="level">{{level}}</option>
+    </select>
+    <div *ngIf="isCustomLevel" class="form-inline">
+      <input [(ngModel)]="language.level" type="text" class="form-control" id="addCustomLanguageLevel"
+        placeholder="Inserisci Livello">
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="customLanguageLevel" [(ngModel)]="isCustomLevel"
+        name="isChecked">
+      <span class="form-check-label" for="customLanguageLevel">Livello Custom</span>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <button class="btn btn-primary me-2" (click)="addItem()" [disabled]="!language.name">
+      <i class="bi bi-plus-circle"></i>
+      AGGIUNGI
+    </button>
+    <button class="btn btn-secondary" (click)="clearItem()">
+      <i class="bi bi-x-circle"></i>
+      PULISCI
+    </button>
+  </div>
+</div>
+
+<!-- CHIPS -->
+<div class="row mt-2">
+  <div class="col-12">
+    <div *ngFor="let language of languages;" class="chip-container me-2 mb-2">
+      <span>
+        {{language.name}}
+        <span *ngIf="language.level">
+          ({{language.level}})
+        </span>
+      </span>
+      <span class="chip-delete ms-1" (click)="removeItem(language)">
+        <i class="bi bi-x-lg"></i>
+      </span>
+    </div>
+  </div>
+</div>

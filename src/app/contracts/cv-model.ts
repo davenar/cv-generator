@@ -25,7 +25,7 @@ export interface Skill {
 
 export interface Language {
   name?: string;
-  level?: LanguageLevel;
+  level?: string;
 }
 
 export interface Address {
@@ -34,6 +34,15 @@ export interface Address {
   city?: string;
   zipCode?: string;
 }
+
+export const europeanLanguageLevels: string[] = [
+  "A1",
+  "A2",
+  "B1",
+  "B2",
+  "C1",
+  "C2",
+];
 
 export enum LanguageLevel {
   A1 = "A1",
