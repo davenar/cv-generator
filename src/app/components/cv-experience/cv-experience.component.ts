@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Experience } from 'src/app/contracts/cv-model';
+import * as lodash from 'lodash';
 
 @Component({
   selector: 'cv-experience',
@@ -12,6 +13,7 @@ export class CvExperienceComponent {
 
   addItem() {
     this.experiences.push(this.experience);
+    this.experiences = lodash.orderBy(this.experiences, ['startDate'], ['desc']);
     this.experience = {};
   }
 
