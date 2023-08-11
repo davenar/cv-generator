@@ -8,6 +8,7 @@ import { ToolbarComponent } from './components/shared/toolbar/toolbar.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CvSkillsComponent } from './components/cv-skills/cv-skills.component';
 import { CvLanguagesComponent } from './components/cv-languages/cv-languages.component';
+import { CvExperienceComponent } from './components/cv-experience/cv-experience.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { CvLanguagesComponent } from './components/cv-languages/cv-languages.com
     ToolbarComponent,
     CvSkillsComponent,
     CvLanguagesComponent,
+    CvExperienceComponent,
 
   ],
   imports: [
