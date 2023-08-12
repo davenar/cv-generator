@@ -1,0 +1,23 @@
+.toolbar-container {
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  /* background-color: rgba(var(--bs-primary-rgb), 0.7);*/ /* Colore con trasparenza */
+  background-color: rgba(var(--bs-primary-rgb));
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+
+  /* Nuove regolazioni per far diventare la toolbar fissa in alto */
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.toolbar-subcontainer {
+  display: flex;
+  gap: 10px;
+}
+
+.toolbar-title{
+  color: white;
+}
