@@ -19,5 +19,7 @@
 }
 
 .toolbar-title{
+  display: flex;
+  gap: 5px;
   color: white;
 }

@@ -41,21 +41,6 @@ export class CvFormComponent implements OnInit, OnDestroy {
     return URL.createObjectURL(file);
   }
 
-  downloadJSON() {
-    const jsonString = JSON.stringify(this.cv);
-    console.log(`download: ${jsonString}`);
-    const blob = new Blob([jsonString], { type: 'application/json' });
-    const url = window.URL.createObjectURL(blob);
-
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'cv.json';
-    a.click();
-
-    // Clean up the URL object
-    window.URL.revokeObjectURL(url);
-  }
-
   pippo() {
     console.log("pippo");
     console.log(this.cv);
