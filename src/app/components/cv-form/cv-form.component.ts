@@ -42,8 +42,8 @@ export class CvFormComponent implements OnInit {
   }
 
 
-  setCvDatasource() {
-    this.cv.email = "pippo"
+  pippo() {
+    console.log("pippo");
   }
 
   // ngOnDestroy() {
