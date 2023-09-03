@@ -11,6 +11,7 @@ import { CvLanguagesComponent } from './components/cv-languages/cv-languages.com
 import { CvExperienceComponent } from './components/cv-experience/cv-experience.component';
 import { CvEducationComponent } from './components/cv-education/cv-education.component';
 import { CvSocialAccountsComponent } from './components/cv-social-accounts/cv-social-accounts.component';
+import { CvAddressComponent } from './components/cv-address/cv-address.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { CvSocialAccountsComponent } from './components/cv-social-accounts/cv-so
     CvExperienceComponent,
     CvEducationComponent,
     CvSocialAccountsComponent,
+    CvAddressComponent,
 
   ],
   imports: [

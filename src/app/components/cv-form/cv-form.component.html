@@ -75,35 +75,7 @@
 
   <fieldset>
     <legend>Indirizzo</legend>
-    <div class="row">
-      <div class="col-4">
-        <div class="form-group">
-          <label for="streetName">Via:</label>
-          <input [(ngModel)]="cv.address.streetName" type="text" class="form-control" id="streetName"
-            placeholder="Inserisci Via">
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="form-group">
-          <label for="streetNumber">Num. Civico:</label>
-          <input [(ngModel)]="cv.address.streetNumber" type="text" class="form-control" id="streetNumber"
-            placeholder="Inserisci Num. Civico">
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="form-group">
-          <label for="city">Città:</label>
-          <input [(ngModel)]="cv.address.city" type="text" class="form-control" id="city" placeholder="Inserisci Città">
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="form-group">
-          <label for="zipCode">CAP:</label>
-          <input [(ngModel)]="cv.address.zipCode" type="text" class="form-control" id="zipCode"
-            placeholder="Inserisci CAP">
-        </div>
-      </div>
-    </div>
+    <cv-address [address]="cv.address"></cv-address>
   </fieldset>
 
   <fieldset>
