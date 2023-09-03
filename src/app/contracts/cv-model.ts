@@ -5,12 +5,14 @@ export interface CVModel {
   photo?: string;
   birthDate?: string;
   address: Address;
+  socialAccounts: SocialAccounts;
   email?: string;
   phoneNumber?: string;
   experience: Experience[];
   education: Education[];
   skills: Skill[];
   spokenLanguages: Language[];
+  website?: string;
 }
 
 export interface Experience {
@@ -44,6 +46,19 @@ export interface Address {
   streetNumber?: string;
   city?: string;
   zipCode?: string;
+}
+
+export interface SocialAccounts {
+  linkedin?: string;
+  github?: string;
+  twitter?: string;
+  facebook?: string;
+  instagram?: string;
+  whatsapp?: string;
+  telegram?: string;
+  youtube?: string;
+  twitch?: string;
+  pinterest?: string;
 }
 
 export const europeanLanguageLevels: string[] = [

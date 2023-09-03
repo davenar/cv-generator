@@ -56,6 +56,14 @@
       </div>
       <div class="col-3">
         <div class="form-group">
+          <label for="firstName">Sito Web:</label>
+          <input [(ngModel)]="cv.website" type="url" class="form-control" id="website" placeholder="Inserisci Sito Web">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <div class="form-group">
           <label for="photo">Foto:</label>
           <input [(ngModel)]="cv.photo" type="file" class="form-control" id="photo" placeholder="Carica Foto"
             (change)="onImageSelected($event)" accept="image/png, image/jpeg">
@@ -77,7 +85,7 @@
       </div>
       <div class="col-2">
         <div class="form-group">
-          <label for="streetNumber">Numero Civico:</label>
+          <label for="streetNumber">Num. Civico:</label>
           <input [(ngModel)]="cv.address.streetNumber" type="text" class="form-control" id="streetNumber"
             placeholder="Inserisci Num. Civico">
         </div>
@@ -93,6 +101,86 @@
           <label for="zipCode">CAP:</label>
           <input [(ngModel)]="cv.address.zipCode" type="text" class="form-control" id="zipCode"
             placeholder="Inserisci CAP">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Social</legend>
+    <div class="row">
+      <div class="col-3">
+        <div class="form-group">
+          <label for="streetName">LinkedIn:</label>
+          <input [(ngModel)]="cv.socialAccounts.linkedin" type="text" class="form-control"
+            placeholder="Inserisci Account">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label for="streetName">Github:</label>
+          <input [(ngModel)]="cv.socialAccounts.github" type="text" class="form-control"
+            placeholder="Inserisci Account">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label for="streetName">Twitter:</label>
+          <input [(ngModel)]="cv.socialAccounts.twitter" type="text" class="form-control"
+            placeholder="Inserisci Account">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label for="streetName">Telegram:</label>
+          <input [(ngModel)]="cv.socialAccounts.telegram" type="text" class="form-control"
+            placeholder="Inserisci Account">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <div class="form-group">
+          <label for="streetName">Facebook:</label>
+          <input [(ngModel)]="cv.socialAccounts.facebook" type="text" class="form-control"
+            placeholder="Inserisci Account">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label for="streetName">Instagram:</label>
+          <input [(ngModel)]="cv.socialAccounts.instagram" type="text" class="form-control"
+            placeholder="Inserisci Account">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label for="streetName">Whatsapp:</label>
+          <input [(ngModel)]="cv.socialAccounts.whatsapp" type="text" class="form-control"
+            placeholder="Inserisci Account">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <div class="form-group">
+          <label for="streetName">Youtube:</label>
+          <input [(ngModel)]="cv.socialAccounts.youtube" type="text" class="form-control"
+            placeholder="Inserisci Account">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label for="streetName">Twitch:</label>
+          <input [(ngModel)]="cv.socialAccounts.twitch" type="text" class="form-control"
+            placeholder="Inserisci Account">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label for="streetName">Pinterest:</label>
+          <input [(ngModel)]="cv.socialAccounts.pinterest" type="text" class="form-control"
+            placeholder="Inserisci Account">
         </div>
       </div>
     </div>
