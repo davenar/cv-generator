@@ -14,6 +14,7 @@ export class CvFormComponent implements OnInit, OnDestroy {
     spokenLanguages: [],
     address: {},
     socialAccounts: {},
+    showPrivacyInfo: true,
   };
 
   constructor() { }

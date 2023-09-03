@@ -13,6 +13,7 @@ export interface CVModel {
   skills: Skill[];
   spokenLanguages: Language[];
   website?: string;
+  showPrivacyInfo: boolean;
 }
 
 export interface Experience {
