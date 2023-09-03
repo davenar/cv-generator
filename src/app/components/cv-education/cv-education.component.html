@@ -1,0 +1,94 @@
+<div class="row">
+
+  <!-- CARD NUOVA ISTRUZIONE -->
+  <div class="col-3">
+    <div class="card" style="border: 2px dashed var(--bs-secondary); background-color: whitesmoke;">
+      <div class="card-body">
+        <h5 class="card-title">Aggiungi Nuova Istruzione</h5>
+        <div class="form-group">
+          <label>Titolo:</label>
+          <input [(ngModel)]="education.title" type="text" class="form-control mb-2" placeholder="Inserisci Titolo">
+        </div>
+        <div class="form-group">
+          <label>Luogo:</label>
+          <input [(ngModel)]="education.location" type="text" class="form-control mb-2" placeholder="Inserisci Luogo">
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <label>Anno Inizio:</label>
+            <input [(ngModel)]="education.startYear" type="number" class="form-control mb-2">
+          </div>
+          <div class="col-4">
+            <label>Anno Fine:</label>
+            <input [(ngModel)]="education.endYear" type="number" class="form-control mb-2">
+          </div>
+          <div class="col-4">
+            <label>Punteggio:</label>
+            <input [(ngModel)]="education.score" type="text" class="form-control mb-2">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Descrizione:</label>
+          <textarea [(ngModel)]="education.description" class="form-control" rows="5"
+            placeholder="Inserisci Descrizione"></textarea>
+        </div>
+        <div class="d-flex justify-content-end mt-2">
+          <button class="btn btn-sm btn-secondary me-2" (click)="clearItem()">
+            <i class="bi bi-x-circle"></i>
+            PULISCI
+          </button>
+          <button class="btn btn-sm btn-primary" (click)="addItem()" [disabled]="!education.title">
+            <i class="bi bi-plus-circle"></i>
+            AGGIUNGI
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD ESPERIENZA PRECEDENTE -->
+  <div class="col-3" *ngFor="let previousEducation of educationList">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Esperienza Precedente</h5>
+        <div class="form-group">
+          <label>Titolo:</label>
+          <input [(ngModel)]="previousEducation.title" type="text" class="form-control mb-2"
+            placeholder="Inserisci Titolo">
+        </div>
+        <div class="form-group">
+          <label>Luogo:</label>
+          <input [(ngModel)]="previousEducation.location" type="text" class="form-control mb-2"
+            placeholder="Inserisci Luogo">
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <label>Anno Inizio:</label>
+            <input [(ngModel)]="previousEducation.startYear" type="number" class="form-control mb-2">
+          </div>
+          <div class="col-4">
+            <label>Anno Fine:</label>
+            <input [(ngModel)]="previousEducation.endYear" type="number" class="form-control mb-2">
+          </div>
+          <div class="col-4">
+            <label>Punteggio:</label>
+            <input [(ngModel)]="previousEducation.score" type="text" class="form-control mb-2">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Descrizione:</label>
+          <textarea [(ngModel)]="previousEducation.description" class="form-control" rows="5"
+            placeholder="Inserisci Descrizione"></textarea>
+        </div>
+        <div class="d-flex justify-content-end mt-2">
+          <button class="btn btn-sm btn-danger" (click)="removeItem(previousEducation)">
+            <i class="bi bi-x-circle"></i>
+            RIMUOVI
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

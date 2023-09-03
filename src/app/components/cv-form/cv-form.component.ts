@@ -9,6 +9,7 @@ import { CVModel } from 'src/app/contracts/cv-model';
 export class CvFormComponent implements OnInit, OnDestroy {
   cv: CVModel = {
     experience: [],
+    education: [],
     skills: [],
     spokenLanguages: [],
     address: {}

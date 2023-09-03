@@ -8,6 +8,7 @@ export interface CVModel {
   email?: string;
   phoneNumber?: string;
   experience: Experience[];
+  education: Education[];
   skills: Skill[];
   spokenLanguages: Language[];
 }
@@ -18,6 +19,15 @@ export interface Experience {
   description?: string;
   startDate?: Date;
   endDate?: Date;
+}
+
+export interface Education {
+  title?: string;
+  location?: string;
+  score?: string;
+  description?: string;
+  startYear?: number;
+  endYear?: number;
 }
 
 export interface Skill {

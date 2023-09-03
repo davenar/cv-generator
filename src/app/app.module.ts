@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CvSkillsComponent } from './components/cv-skills/cv-skills.component';
 import { CvLanguagesComponent } from './components/cv-languages/cv-languages.component';
 import { CvExperienceComponent } from './components/cv-experience/cv-experience.component';
+import { CvEducationComponent } from './components/cv-education/cv-education.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { CvExperienceComponent } from './components/cv-experience/cv-experience.
     CvSkillsComponent,
     CvLanguagesComponent,
     CvExperienceComponent,
+    CvEducationComponent,
 
   ],
   imports: [
