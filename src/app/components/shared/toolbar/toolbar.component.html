@@ -9,10 +9,15 @@
     </div>
   </div>
   <div class="toolbar-subcontainer">
-    <button class="btn btn-outline-light" (click)="onImportCV && onImportCV()">
+
+    <button class="btn btn-outline-light" (click)="uploadJson.click()">
       <i class="bi bi-file-arrow-up-fill"></i>
       CARICA CV
     </button>
+    <input type="file" #uploadJson (change)="onImportCV($event)" accept=".json" style="display: none">
+
+
+
     <button class="btn btn-outline-light" (click)="downloadJSON(cv)">
       <i class="bi bi-download"></i>
       SALVA CV
@@ -21,7 +26,7 @@
       <i class="bi bi-file-earmark-pdf-fill"></i>
       SALVA PDF
     </button>
-    <button class="btn btn-outline-light"  (click)="printCV()">
+    <button class="btn btn-outline-light" (click)="printCV()">
       <i class="bi bi-printer-fill"></i>
       STAMPA
     </button>

@@ -13,7 +13,7 @@ export class CvExperienceComponent {
 
   addItem() {
     this.experiences.push(this.experience);
-    this.experiences = lodash.orderBy(this.experiences, ['startDate'], ['desc']);
+    //this.experiences = lodash.orderBy(this.experiences, ['startDate'], ['desc']);
     this.experience = {};
   }
 

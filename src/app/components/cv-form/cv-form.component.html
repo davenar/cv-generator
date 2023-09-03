@@ -5,7 +5,7 @@
 <!-- <img *ngIf="selectedImage" [src]="getObjectURL(selectedImage)">
 <p>{{selectedImage?.name}}</p> -->
 
-<app-toolbar [onImportCV]="pippo" [cv]="cv"></app-toolbar>
+<app-toolbar [cv]="cv" (cvLoaded)="handleCVLoaded($event)"></app-toolbar>
 
 <div style="margin-top: 50px;">
   <fieldset>

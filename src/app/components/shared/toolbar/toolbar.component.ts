@@ -8,8 +8,9 @@ import { CVModel } from 'src/app/contracts/cv-model';
 })
 export class ToolbarComponent {
   version: string = "v1.0";
-  @Input() onImportCV!: Function;
   @Input() cv: CVModel | undefined;
+
+  @Output() cvLoaded: EventEmitter<CVModel> = new EventEmitter();
 
 
   downloadJSON(json: any): void {
@@ -26,6 +27,37 @@ export class ToolbarComponent {
     // Clean up the URL object
     window.URL.revokeObjectURL(url);
   }
+
+  onImportCV(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      console.log('File selezionato:', file);
+      const allowedTypes = ['application/json'];
+      if (allowedTypes.includes(file.type)) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          try {
+            const jsonText = e?.target?.result as string;
+            this.cv = JSON.parse(jsonText) as CVModel;
+            console.log('File JSON caricato con successo:', this.cv);
+
+            this.cv.photo = ''; // TODO: gestire salvataggio immagine
+            this.cvLoaded.emit(this.cv);
+
+          } catch (error) {
+            console.error('Errore durante il caricamento del file JSON:', error);
+          }
+        };
+        reader.readAsText(file);
+      }
+      else {
+        // Tipo di file non valido, mostra un messaggio all'utente.
+        alert('Tipo di file non supportato. Scegli un file JSON.');
+      }
+    }
+  }
+
+
 
   printCV() {
     // const printWindow = window.open('', '_blank');

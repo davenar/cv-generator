@@ -44,9 +44,8 @@ export class CvFormComponent implements OnInit, OnDestroy {
     return URL.createObjectURL(file);
   }
 
-  pippo() {
-    console.log("pippo");
-    console.log(this.cv);
+  handleCVLoaded(cv: CVModel) {
+    this.cv = cv;
   }
 
   ngOnDestroy() {

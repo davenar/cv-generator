@@ -13,7 +13,7 @@ export class CvEducationComponent {
 
   addItem() {
     this.educationList.push(this.education);
-    this.educationList = lodash.orderBy(this.educationList, ['startYear'], ['desc']);
+    //this.educationList = lodash.orderBy(this.educationList, ['startYear'], ['desc']);
     this.education = {};
   }
 
