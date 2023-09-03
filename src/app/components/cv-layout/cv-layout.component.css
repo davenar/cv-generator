@@ -1,0 +1,29 @@
+.a4-div {
+  width: 90%;
+  max-width: 800px; /* Limiting the maximum width */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.a4-div:before {
+  content: "";
+  display: block;
+  padding-top: calc(297mm / 210mm * 100%); /* Maintain A4 proportions */
+}
+
+@media print {
+  body {
+    background-color: white;
+  }
+
+  .a4-div {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    position: static;
+  }
+}
