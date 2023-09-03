@@ -10,6 +10,7 @@ import { CvSkillsComponent } from './components/cv-skills/cv-skills.component';
 import { CvLanguagesComponent } from './components/cv-languages/cv-languages.component';
 import { CvExperienceComponent } from './components/cv-experience/cv-experience.component';
 import { CvEducationComponent } from './components/cv-education/cv-education.component';
+import { CvSocialAccountsComponent } from './components/cv-social-accounts/cv-social-accounts.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { CvEducationComponent } from './components/cv-education/cv-education.com
     CvLanguagesComponent,
     CvExperienceComponent,
     CvEducationComponent,
+    CvSocialAccountsComponent,
 
   ],
   imports: [
