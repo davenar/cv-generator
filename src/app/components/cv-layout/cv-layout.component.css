@@ -1,3 +1,20 @@
+/* VARIABLES */
+:host {
+  --cv-primary: royalblue;
+  --cv-secondary: gray;
+  --cv-medium: turquoise;
+  --cv-light: white;
+  --cv-dark: black;
+}
+
+/* Template Styles */
+.cv-title-container {
+  background-color: var(--cv-primary);
+  border-radius: 12px;
+  color: var(--cv-light);
+}
+
+/*#region A4 Sheet Management*/
 .a4-div {
   width: 90%;
   max-width: 800px; /* Limiting the maximum width */
@@ -27,3 +44,5 @@
     position: static;
   }
 }
+/*#endregion*/
+
