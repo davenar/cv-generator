@@ -20,7 +20,7 @@ export class ToolbarComponent {
 
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'cv.json';
+    a.download = `${this.cv?.firstName ? `${this.cv.firstName}_` : ''}${this.cv?.lastName ? `${this.cv.lastName}_` : ''}cv.json`;
     a.click();
 
     // Clean up the URL object
