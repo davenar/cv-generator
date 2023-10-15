@@ -35,19 +35,51 @@
       <div class="col-8 pt-2">
         <div class="mt-2">
 
-          <div class="experience-container mb-4">
+          <!-- ESPERIENZA -->
+          <div *ngIf="datasource.experience.length > 0" class="experience-container mb-4">
             <h2 class="experience-section-title">
               Esperienza
             </h2>
 
             <div *ngFor="let experience of datasource.experience">
-              <h4 class="experience-title">
-                {{experience.title}}
+              <!-- TITOLO ESPERIENZA -->
+              <h4 class="experience-title" *ngIf="experience.companyName || experience.title">
+                <span *ngIf="experience.companyName">
+                  {{experience.companyName}}
+                </span>
+                <span *ngIf="experience.companyName && experience.title">
+                  <i class="bi bi-dot"></i>
+                </span>
+                <span *ngIf="experience.title">
+                  {{experience.title}}
+                </span>
               </h4>
+              <!-- DATA E LUOGO ESPERIENZA -->
               <h6 class="experience-title">
-                <i class="bi bi-geo-alt-fill"></i>
-                {{experience.location}}
+                <i class="bi bi-calendar3"></i>
+                <span *ngIf="experience.startDate">
+                  {{experience.startDate | date:'MMM y'}}
+                </span>
+                <span>
+                  {{experience.startDate && experience.endDate ? "-" : "~"}}
+                </span>
+                <span *ngIf="experience.endDate">
+                  {{experience.endDate | date:'MMM y'}}
+                </span>
+                <span *ngIf="experience.location" class="ms-4">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  {{experience.location}}
+                </span>
               </h6>
+
+              <!-- DESCRIZIONE ESPERIENZA -->
+              <div *ngIf="experience.description">
+                <p>
+                  {{experience.description}}
+                </p>
+              </div>
+
+
 
             </div>
 

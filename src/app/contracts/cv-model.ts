@@ -18,6 +18,7 @@ export interface CVModel {
 }
 
 export interface Experience {
+  companyName?: string;
   title?: string;
   location?: string;
   description?: string;
