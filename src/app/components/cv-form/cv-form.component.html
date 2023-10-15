@@ -5,9 +5,10 @@
 <!-- <img *ngIf="selectedImage" [src]="getObjectURL(selectedImage)">
 <p>{{selectedImage?.name}}</p> -->
 
-<app-toolbar [cv]="cv" (cvLoaded)="handleCVLoaded($event)"></app-toolbar>
+<app-toolbar [cv]="cv" (cvLoaded)="handleCVLoaded($event)" class="d-print-none"></app-toolbar>
 
-<div style="margin-top: 50px;">
+
+<div class="d-print-none" style="margin-top: 50px;">
   <fieldset>
     <legend>Dati Anagrafici</legend>
     <div class="row">
@@ -117,20 +118,23 @@
 
 
 
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-4">
 
     </div>
     <div class="col-4">
 
     </div>
-  </div>
+  </div> -->
 
 
 
   <!-- <input type="file" (change)="onImageSelected($event)" accept="image/png, image/jpeg"> -->
 
 
-  <cv-layout [datasource]="cv"></cv-layout>
 
 </div>
+
+
+
+<cv-layout [datasource]="cv"></cv-layout>
