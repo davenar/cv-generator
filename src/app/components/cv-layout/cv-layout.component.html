@@ -1,11 +1,11 @@
-<!-- <div style="border: 2px solid green; margin: 10px; padding: 10px;">
+<div style="border: 2px solid green; margin: 10px; padding: 10px;">
   <p>cv-layout works!</p>
 
 
   <div>{{(printJSON(datasource))}}</div>
 
-  <img *ngIf="datasource?.photo" [src]="datasource.photo">
-</div> -->
+  <!-- <img *ngIf="datasource?.photo" [src]="datasource.photo"> -->
+</div>
 
 <div class="a4-div">
 
@@ -35,8 +35,69 @@
           una serie di roba
         </div>
       </div>
-      <div class="col-4 pt-2" style="border-left: 1px solid gray;">
+      <div class="col-4 pt-2" style="border-left: 2px solid lightgrey;">
         <div class="mt-3">
+
+          <div class="contacts-container mb-4">
+            <div *ngIf="datasource.birthDate" class="contact">
+              <i class="bi bi-square-fill"></i>
+              <span>
+                {{ datasource.birthDate | date:'dd/MM/yyyy' }}
+              </span>
+            </div>
+            <div *ngIf="datasource.address.city" class="contact">
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>
+                {{datasource.address.streetName}} {{datasource.address.streetNumber}} {{datasource.address.zipCode}}
+                {{datasource.address.city}}
+              </span>
+            </div>
+            <div *ngIf="datasource.phoneNumber" class="contact">
+              <i class="bi bi-telephone-inbound-fill"></i>
+              <span>
+                {{datasource.phoneNumber}}
+              </span>
+            </div>
+            <div *ngIf="datasource.email" class="contact">
+              <i class="bi bi-envelope-fill"></i>
+              <span>
+                {{datasource.email}}
+              </span>
+            </div>
+            <div *ngIf="datasource.website" class="contact">
+              <i class="bi bi-browser-chrome"></i>
+              <span>
+                {{datasource.website}}
+              </span>
+            </div>
+          </div>
+
+
+          <div *ngIf="datasource.skills.length > 0" class="skills-container">
+            <h4 class="skills-title">Skills</h4>
+            <dl>
+              <dt *ngFor="let skill of datasource.skills">
+                {{skill.name}}
+              </dt>
+            </dl>
+          </div>
+
+
+          <div *ngIf="datasource.spokenLanguages.length > 0" class="languages-container">
+            <h4 class="languages-title">Lingue</h4>
+            <dl>
+              <dt *ngFor="let language of datasource.spokenLanguages">
+                <span>
+                  {{language.name}}
+                </span>
+                <span *ngIf="language.level">
+                  ({{language.level}})
+                </span>
+              </dt>
+            </dl>
+          </div>
+
+
 
           tanta altra roba meno importante
         </div>
@@ -51,4 +112,4 @@
 
 
 
-  <h1>aaaaaaaaaaaa</h1>
+<h1>aaaaaaaaaaaa</h1>

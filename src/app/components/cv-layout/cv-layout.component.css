@@ -9,6 +9,9 @@
 
 /* Template Styles */
 
+dt {
+  font-weight: normal;
+}
 
 .cv-title-container {
   background-color: var(--cv-primary);
@@ -45,6 +48,16 @@
   height: 110px; /* Altezza del cerchio (puoi regolare questa altezza come desideri) */
   width: 110px; /* Larghezza del cerchio (stessa altezza per fare un cerchio) */
   border: 3px solid var(--cv-primary);
+}
+
+.skills-title {
+  margin-bottom: 0px;
+  color: var(--cv-primary);
+}
+
+.languages-title {
+  margin-bottom: 0px;
+  color: var(--cv-primary);
 }
 
 /*#region A4 Sheet Management*/
