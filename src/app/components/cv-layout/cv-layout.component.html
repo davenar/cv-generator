@@ -97,6 +97,21 @@
             </dl>
           </div>
 
+          <!-- CERTIFICAZIONI -->
+          <div *ngIf="datasource.certifications.length > 0" class="certifications-container">
+            <h4 class="certifications-title">Certificazioni</h4>
+            <dl>
+              <dt *ngFor="let certification of datasource.certifications">
+                <span *ngIf="certification.vendor">
+                  {{certification.vendor}}
+                </span>
+                <span *ngIf="certification.name">
+                  {{certification.name}}
+                </span>
+              </dt>
+            </dl>
+          </div>
+
           <!-- LINGUE -->
           <div *ngIf="datasource.spokenLanguages.length > 0" class="languages-container">
             <h4 class="languages-title">Lingue</h4>

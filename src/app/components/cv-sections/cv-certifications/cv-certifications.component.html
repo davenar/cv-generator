@@ -1,0 +1,45 @@
+<!-- FORM -->
+<div class="row">
+
+  <div class="col-4">
+    <div class="form-inline">
+      <input [(ngModel)]="certification.vendor" type="text" class="form-control" id="addCertificationVendor"
+        placeholder="Inserisci Vendor Certificazione">
+    </div>
+  </div>
+
+  <div class="col-5">
+    <div class="form-inline">
+      <input [(ngModel)]="certification.name" type="text" class="form-control" id="addCertificationName"
+        placeholder="Inserisci Nome Certificazione">
+    </div>
+  </div>
+  <div class="col-3">
+    <button class="btn btn-primary me-2" (click)="addItem()" [disabled]="!certification.name">
+      <i class="bi bi-plus-circle"></i>
+      AGGIUNGI
+    </button>
+    <button class="btn btn-secondary" (click)="clearItem()">
+      <i class="bi bi-x-circle"></i>
+      PULISCI
+    </button>
+  </div>
+
+</div>
+
+<!-- CHIPS -->
+<div class="row mt-2">
+  <div class="col-12">
+    <div *ngFor="let certification of certifications;" class="chip-container me-2 mb-2">
+      <span *ngIf="certification.vendor">
+        {{certification.vendor}}
+      </span>
+      <span>
+        {{certification.name}}
+      </span>
+      <span class="chip-delete ms-1" (click)="removeItem(certification)">
+        <i class="bi bi-x-lg"></i>
+      </span>
+    </div>
+  </div>
+</div>

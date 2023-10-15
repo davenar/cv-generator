@@ -12,6 +12,7 @@ import { CvLanguagesComponent } from './components/cv-sections/cv-languages/cv-l
 import { CvSkillsComponent } from './components/cv-sections/cv-skills/cv-skills.component';
 import { CvSocialAccountsComponent } from './components/cv-sections/cv-social-accounts/cv-social-accounts.component';
 import { ToolbarComponent } from './components/shared/toolbar/toolbar.component';
+import { CvCertificationsComponent } from './components/cv-sections/cv-certifications/cv-certifications.component';
 
 
 
@@ -27,6 +28,7 @@ import { ToolbarComponent } from './components/shared/toolbar/toolbar.component'
     CvEducationComponent,
     CvSocialAccountsComponent,
     CvAddressComponent,
+    CvCertificationsComponent,
 
   ],
   imports: [

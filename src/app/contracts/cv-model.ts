@@ -11,6 +11,7 @@ export interface CVModel {
   experience: Experience[];
   education: Education[];
   skills: Skill[];
+  certifications: Certification[];
   spokenLanguages: Language[];
   website?: string;
   showPrivacyInfo: boolean;
@@ -34,6 +35,11 @@ export interface Education {
 }
 
 export interface Skill {
+  name?: string;
+}
+
+export interface Certification {
+  vendor?: string;
   name?: string;
 }
 

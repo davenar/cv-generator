@@ -55,6 +55,11 @@ dt {
   color: var(--cv-primary);
 }
 
+.certifications-title {
+  margin-bottom: 0px;
+  color: var(--cv-primary);
+}
+
 .languages-title {
   margin-bottom: 0px;
   color: var(--cv-primary);

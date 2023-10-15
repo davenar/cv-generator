@@ -11,6 +11,7 @@ export class CvFormComponent implements OnInit, OnDestroy {
     experience: [],
     education: [],
     skills: [],
+    certifications: [],
     spokenLanguages: [],
     address: {},
     socialAccounts: {},
