@@ -18,15 +18,15 @@
 
 
 
-    <button class="btn btn-outline-light" (click)="downloadJSON(cv)">
+    <button class="btn btn-outline-light" [disabled]="!cv?.firstName" (click)="downloadJSON(cv)">
       <i class="bi bi-download"></i>
       SALVA CV
     </button>
-    <button class="btn btn-outline-light">
+    <button class="btn btn-outline-light" [disabled]="!cv?.firstName">
       <i class="bi bi-file-earmark-pdf-fill"></i>
       SALVA PDF
     </button>
-    <button class="btn btn-outline-light" (click)="printCV()">
+    <button class="btn btn-outline-light" (click)="printCV()" [disabled]="!cv?.firstName">
       <i class="bi bi-printer-fill"></i>
       STAMPA
     </button>
