@@ -1,31 +1,54 @@
-<div style="border: 2px solid green; margin: 10px; padding: 10px;">
+<!-- <div style="border: 2px solid green; margin: 10px; padding: 10px;">
   <p>cv-layout works!</p>
 
 
   <div>{{(printJSON(datasource))}}</div>
 
   <img *ngIf="datasource?.photo" [src]="datasource.photo">
-</div>
+</div> -->
 
 <div class="a4-div">
+
+
+
+
   <div class="row">
-    <div class="col-12" class="cv-title-container">
-      <h1>{{datasource.firstName}} {{datasource.lastName}}</h1>
-      <h4>
-        <i>{{datasource.jobTitle}}</i>
-      </h4>
+
+
+    <div class="cv-title-container">
+      <div class="info-container">
+        <h1 class="name-container mb-0">{{datasource.firstName}} {{datasource.lastName}}</h1>
+        <h4 class="name-container">
+          <i>{{datasource.jobTitle}}</i>
+        </h4>
+      </div>
+      <div class="image-container">
+        <img *ngIf="datasource?.photo" [src]="datasource.photo">
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-8 pt-2" >
-      una serie di roba
+
+
+    <div class="row">
+      <div class="col-8 pt-2">
+        <div class="mt-2">
+
+          una serie di roba
+        </div>
+      </div>
+      <div class="col-4 pt-2" style="border-left: 1px solid gray;">
+        <div class="mt-3">
+
+          tanta altra roba meno importante
+        </div>
+      </div>
     </div>
-    <div class="col-4 pt-2" style="border-left: 1px solid gray;">
-      tanta altra roba meno importante
-    </div>
+
+
+
+
   </div>
 </div>
 
 
 
-<h1>aaaaaaaaaaaa</h1>
+  <h1>aaaaaaaaaaaa</h1>
