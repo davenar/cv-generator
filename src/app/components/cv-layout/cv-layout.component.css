@@ -50,6 +50,16 @@ dt {
   border: 3px solid var(--cv-primary);
 }
 
+.experience-section-title {
+  margin-bottom: 10px;
+  color: var(--cv-primary);
+}
+
+.experience-title {
+  margin-bottom: 0px;
+  color: var(--cv-primary);
+}
+
 .skills-title {
   margin-bottom: 0px;
   color: var(--cv-primary);

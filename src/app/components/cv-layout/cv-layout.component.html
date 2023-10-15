@@ -35,6 +35,27 @@
       <div class="col-8 pt-2">
         <div class="mt-2">
 
+          <div class="experience-container mb-4">
+            <h2 class="experience-section-title">
+              Esperienza
+            </h2>
+
+            <div *ngFor="let experience of datasource.experience">
+              <h4 class="experience-title">
+                {{experience.title}}
+              </h4>
+              <h6 class="experience-title">
+                <i class="bi bi-geo-alt-fill"></i>
+                {{experience.location}}
+              </h6>
+
+            </div>
+
+
+
+          </div>
+
+
           una serie di roba
         </div>
       </div>
@@ -49,7 +70,7 @@
           <!-- CONTATTI -->
           <div class="contacts-container mb-4">
             <div *ngIf="datasource.birthDate" class="contact">
-              <i class="bi bi-square-fill"></i>
+              <i class="bi bi-balloon-fill"></i>
               <span>
                 {{ datasource.birthDate | date:'dd/MM/yyyy' }}
               </span>
