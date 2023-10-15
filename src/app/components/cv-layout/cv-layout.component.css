@@ -1,6 +1,6 @@
 /* VARIABLES */
 :host {
-  --cv-primary: royalblue;
+  --cv-primary: #00A2ED;
   --cv-secondary: gray;
   --cv-medium: turquoise;
   --cv-light: white;
@@ -8,10 +8,92 @@
 }
 
 /* Template Styles */
+
+dt {
+  font-weight: normal;
+}
+
 .cv-title-container {
   background-color: var(--cv-primary);
-  border-radius: 12px;
   color: var(--cv-light);
+  border-radius: 10px;
+  display: flex;
+  height: 85px;
+}
+
+.info-container {
+  flex: 1;
+  padding: 0px;
+}
+
+.name-container {
+  white-space: nowrap; /* Impedisce il testo di andare a capo */
+  overflow: hidden; /* Nasconde il testo oltre il contenitore */
+  text-overflow: ellipsis; /* Aggiunge l'ellissi (...) */
+  max-width: 95%; /* Imposta la larghezza massima desiderata */
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 25px;
+}
+
+.image-container img {
+  max-width: 100%; /* Assicurati che l'immagine non superi la larghezza del contenitore */
+  border-radius: 50%; /* Crea il cerchio */
+  object-fit: cover; /* Mantieni l'immagine all'interno del cerchio */
+  height: 110px; /* Altezza del cerchio (puoi regolare questa altezza come desideri) */
+  width: 110px; /* Larghezza del cerchio (stessa altezza per fare un cerchio) */
+  border: 3px solid var(--cv-primary);
+}
+
+.experience-section-title {
+  margin-bottom: 5px;
+  color: var(--cv-primary);
+}
+
+.experience-title {
+  margin-bottom: 0px;
+  color: var(--cv-primary);
+}
+
+.education-section-title {
+  margin-bottom: 5px;
+  color: var(--cv-primary);
+}
+
+.education-title {
+  margin-bottom: 0px;
+  color: var(--cv-primary);
+}
+
+.skills-title {
+  margin-bottom: 0px;
+  color: var(--cv-primary);
+}
+
+.certifications-title {
+  margin-bottom: 0px;
+  color: var(--cv-primary);
+}
+
+.languages-title {
+  margin-bottom: 0px;
+  color: var(--cv-primary);
+}
+
+.socials-title {
+  margin-bottom: 0px;
+  color: var(--cv-primary);
+}
+
+.social-labels-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 /*#region A4 Sheet Management*/

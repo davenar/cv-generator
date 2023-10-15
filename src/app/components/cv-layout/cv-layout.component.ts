@@ -1,5 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { CVModel } from 'src/app/contracts/cv-model';
+import { CVModel, SocialAccounts } from 'src/app/contracts/cv-model';
+import { privacyInformative } from 'src/app/contracts/privacy-helper';
 
 @Component({
   selector: 'cv-layout',
@@ -8,12 +9,14 @@ import { CVModel } from 'src/app/contracts/cv-model';
 })
 export class CvLayoutComponent implements OnInit, OnDestroy {
   @Input() datasource!: CVModel;
+  privacy: string = "";
 
   constructor() {
 
   }
 
   ngOnInit(): void {
+    this.privacy = privacyInformative;
   }
 
 
@@ -23,7 +26,9 @@ export class CvLayoutComponent implements OnInit, OnDestroy {
     return prettyJson;
   }
 
-
+  isSocialAccountsEmpty(accounts: SocialAccounts): boolean {
+    return Object.keys(accounts).length === 0;
+  }
 
   ngOnDestroy() {
     if (this.datasource.photo) {

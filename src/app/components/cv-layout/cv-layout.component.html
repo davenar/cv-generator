@@ -4,28 +4,280 @@
 
   <div>{{(printJSON(datasource))}}</div>
 
-  <img *ngIf="datasource?.photo" [src]="datasource.photo">
+  <!-- <img *ngIf="datasource?.photo" [src]="datasource.photo"> -->
 </div>
 
 <div class="a4-div">
+
+
+
+
   <div class="row">
-    <div class="col-12" class="cv-title-container">
-      <h1>{{datasource.firstName}} {{datasource.lastName}}</h1>
-      <h4>
-        <i>{{datasource.jobTitle}}</i>
-      </h4>
+
+    <!-- INTESTAZIONE -->
+    <div class="cv-title-container">
+      <div class="info-container">
+        <h1 class="name-container mb-0">{{datasource.firstName}} {{datasource.lastName}}</h1>
+        <h4 class="name-container">
+          <i>{{datasource.jobTitle}}</i>
+        </h4>
+      </div>
+      <div class="image-container">
+        <img *ngIf="datasource?.photo" [src]="datasource.photo">
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-8 pt-2" >
-      una serie di roba
+
+    <!-- CORPO -->
+    <div class="row">
+
+
+      <!-- COLONNA SINISTRA (ESPERIENZA, EDUCAZIONE) -->
+      <div class="col-8 pt-2">
+        <div class="mt-2">
+
+          <!-- ESPERIENZA -->
+          <div *ngIf="datasource.experience.length > 0" class="experience-container mb-4">
+            <h2 class="experience-section-title">
+              Esperienza
+            </h2>
+            <div *ngFor="let experience of datasource.experience">
+              <!-- TITOLO ESPERIENZA -->
+              <h4 class="experience-title" *ngIf="experience.companyName || experience.title">
+                <span *ngIf="experience.companyName">
+                  {{experience.companyName}}
+                </span>
+                <span *ngIf="experience.companyName && experience.title">
+                  <i class="bi bi-dot"></i>
+                </span>
+                <span *ngIf="experience.title">
+                  {{experience.title}}
+                </span>
+              </h4>
+              <!-- DATA E LUOGO ESPERIENZA -->
+              <h6 class="experience-title">
+                <i class="bi bi-calendar3"></i>
+                <span *ngIf="experience.startDate">
+                  {{experience.startDate | date:'MMM y'}}
+                </span>
+                <span>
+                  {{experience.startDate && experience.endDate ? "-" : "~"}}
+                </span>
+                <span *ngIf="experience.endDate">
+                  {{experience.endDate | date:'MMM y'}}
+                </span>
+                <span *ngIf="experience.location" class="ms-4">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  {{experience.location}}
+                </span>
+              </h6>
+              <!-- DESCRIZIONE ESPERIENZA -->
+              <div *ngIf="experience.description">
+                <p>
+                  {{experience.description}}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ISTRUZIONE -->
+          <div *ngIf="datasource.education.length > 0" class="education-container mb-4">
+            <h2 class="education-section-title">
+              Istruzione
+            </h2>
+            <div *ngFor="let education of datasource.education">
+              <!-- TITOLO ISTRUZIONE -->
+              <h4 class="education-title" *ngIf="education.title">
+                <span>
+                  {{education.title}}
+                </span>
+              </h4>
+              <!-- DATA E LUOGO ISTRUZIONE -->
+              <h6 class="education-title">
+                <i class="bi bi-calendar3"></i>
+                <span *ngIf="education.startYear">
+                  {{education.startYear}}
+                </span>
+                <span>
+                  {{education.startYear && education.endYear ? "-" : "~"}}
+                </span>
+                <span *ngIf="education.endYear">
+                  {{education.endYear}}
+                </span>
+                <span *ngIf="education.location" class="ms-4">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  {{education.location}}
+                </span>
+                <span *ngIf="education.score" class="ms-4">
+                  <i class="bi bi-bullseye"></i>
+                  {{education.score}}
+                </span>
+              </h6>
+              <!-- DESCRIZIONE ISTRUZIONE -->
+              <div *ngIf="education.description">
+                <p>
+                  {{education.description}}
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+
+
+      <!-- COLONNA DESTRA (CONTATTI, SKILL, LINGUE, SOCIAL) -->
+      <div class="col-4 pt-2" style="border-left: 2px solid var(--cv-primary);">
+        <div class="mt-3">
+
+          <!-- CONTATTI -->
+          <div class="contacts-container mb-4">
+            <div *ngIf="datasource.birthDate" class="contact">
+              <i class="bi bi-balloon-fill"></i>
+              <span>
+                {{ datasource.birthDate | date:'dd/MM/yyyy' }}
+              </span>
+            </div>
+            <div *ngIf="datasource.address.city" class="contact">
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>
+                {{datasource.address.streetName}} {{datasource.address.streetNumber}} {{datasource.address.zipCode}}
+                {{datasource.address.city}}
+              </span>
+            </div>
+            <div *ngIf="datasource.phoneNumber" class="contact">
+              <i class="bi bi-telephone-inbound-fill"></i>
+              <span>
+                {{datasource.phoneNumber}}
+              </span>
+            </div>
+            <div *ngIf="datasource.email" class="contact">
+              <i class="bi bi-envelope-fill"></i>
+              <span>
+                {{datasource.email}}
+              </span>
+            </div>
+            <div *ngIf="datasource.website" class="contact">
+              <i class="bi bi-browser-chrome"></i>
+              <span>
+                {{datasource.website}}
+              </span>
+            </div>
+            <div *ngIf="datasource.socialAccounts.github" class="contact">
+              <i class="bi bi-github"></i>
+              <span>
+                {{datasource.socialAccounts.github}}
+              </span>
+            </div>
+          </div>
+
+          <!-- SKILL -->
+          <div *ngIf="datasource.skills.length > 0" class="skills-container">
+            <h4 class="skills-title">Skill</h4>
+            <dl>
+              <dt *ngFor="let skill of datasource.skills">
+                {{skill.name}}
+              </dt>
+            </dl>
+          </div>
+
+          <!-- CERTIFICAZIONI -->
+          <div *ngIf="datasource.certifications.length > 0" class="certifications-container">
+            <h4 class="certifications-title">Certificazioni</h4>
+            <dl>
+              <dt *ngFor="let certification of datasource.certifications">
+                <span *ngIf="certification.vendor">
+                  {{certification.vendor}}
+                </span>
+                <span *ngIf="certification.name">
+                  {{certification.name}}
+                </span>
+              </dt>
+            </dl>
+          </div>
+
+          <!-- LINGUE -->
+          <div *ngIf="datasource.spokenLanguages.length > 0" class="languages-container">
+            <h4 class="languages-title">Lingue</h4>
+            <dl>
+              <dt *ngFor="let language of datasource.spokenLanguages">
+                <span>
+                  {{language.name}}
+                </span>
+                <span *ngIf="language.level">
+                  ({{language.level}})
+                </span>
+              </dt>
+            </dl>
+          </div>
+
+          <!-- SOCIAL -->
+          <div *ngIf="!isSocialAccountsEmpty(datasource.socialAccounts)" class="socials-container">
+            <h4 class="socials-title">Social</h4>
+            <div class="social-labels-container">
+              <div *ngIf="datasource.socialAccounts.linkedin" class="social-item">
+                <i class="bi bi-linkedin"></i>
+                <span class="ms-1">{{datasource.socialAccounts.linkedin}}</span>
+              </div>
+              <!-- <div *ngIf="datasource.socialAccounts.github" class="social-item">
+                <i class="bi bi-github"></i>
+                <span class="ms-1">{{datasource.socialAccounts.github}}</span>
+              </div> -->
+              <div *ngIf="datasource.socialAccounts.twitter" class="social-item">
+                <i class="bi bi-twitter"></i>
+                <span class="ms-1">{{datasource.socialAccounts.twitter}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.facebook" class="social-item">
+                <i class="bi bi-facebook"></i>
+                <span class="ms-1">{{datasource.socialAccounts.facebook}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.instagram" class="social-item">
+                <i class="bi bi-instagram"></i>
+                <span class="ms-1">{{datasource.socialAccounts.instagram}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.whatsapp" class="social-item">
+                <i class="bi bi-whatsapp"></i>
+                <span class="ms-1">{{datasource.socialAccounts.whatsapp}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.telegram" class="social-item">
+                <i class="bi bi-telegram"></i>
+                <span class="ms-1">{{datasource.socialAccounts.telegram}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.youtube" class="social-item">
+                <i class="bi bi-youtube"></i>
+                <span class="ms-1">{{datasource.socialAccounts.youtube}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.twitch" class="social-item">
+                <i class="bi bi-twitch"></i>
+                <span class="ms-1">{{datasource.socialAccounts.twitch}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.pinterest" class="social-item">
+                <i class="bi bi-pinterest"></i>
+                <span class="ms-1">{{datasource.socialAccounts.pinterest}}</span>
+              </div>
+            </div>
+          </div>
+
+
+
+          tanta altra roba meno importante
+        </div>
+      </div>
     </div>
-    <div class="col-4 pt-2" style="border-left: 1px solid gray;">
-      tanta altra roba meno importante
+
+    <!-- FOOTER -->
+    <div class="row">
+      <i *ngIf="datasource.showPrivacyInfo" style="color: gray; font-size: small;">
+        {{privacy}}
+      </i>
     </div>
+
+
   </div>
 </div>
 
 
 
-<h1>aaaaaaaaaaaa</h1>
+<br />
