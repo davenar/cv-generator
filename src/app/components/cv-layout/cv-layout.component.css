@@ -124,6 +124,7 @@ dt {
     border: none;
     padding: 0;
     position: static;
+    margin-top: 20px;
   }
 }
 /*#endregion*/

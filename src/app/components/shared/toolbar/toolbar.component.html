@@ -22,10 +22,10 @@
       <i class="bi bi-download"></i>
       SALVA CV
     </button>
-    <button class="btn btn-outline-light" [disabled]="!cv?.firstName">
+    <!-- <button class="btn btn-outline-light" [disabled]="!cv?.firstName">
       <i class="bi bi-file-earmark-pdf-fill"></i>
       SALVA PDF
-    </button>
+    </button> -->
     <button class="btn btn-outline-light" (click)="printCV()" [disabled]="!cv?.firstName">
       <i class="bi bi-printer-fill"></i>
       STAMPA

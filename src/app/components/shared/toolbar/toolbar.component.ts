@@ -57,30 +57,7 @@ export class ToolbarComponent {
     }
   }
 
-
-
   printCV() {
-    // const printWindow = window.open('', '_blank');
-    // const a4Div = document.querySelector('.a4-div') as HTMLElement;
-
-    // if (printWindow) {
-    //   printWindow.document.open();
-    //   printWindow.document.write(`
-    //     <html>
-    //       <head>
-    //         <title>Print</title>
-    //         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    //       </head>
-    //       <body>
-    //         <div class="container mt-5">
-    //           ${a4Div.innerHTML}
-    //         </div>
-    //       </body>
-    //     </html>
-    //   `);
-    //   printWindow.document.close();
-    //   printWindow.print();
-    //   printWindow.close();
-    // }
+    window.print();
   }
 }
