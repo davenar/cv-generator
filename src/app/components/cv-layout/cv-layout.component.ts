@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { CVModel } from 'src/app/contracts/cv-model';
+import { CVModel, SocialAccounts } from 'src/app/contracts/cv-model';
 
 @Component({
   selector: 'cv-layout',
@@ -23,7 +23,9 @@ export class CvLayoutComponent implements OnInit, OnDestroy {
     return prettyJson;
   }
 
-
+  isSocialAccountsEmpty(accounts: SocialAccounts): boolean {
+    return Object.keys(accounts).length === 0;
+  }
 
   ngOnDestroy() {
     if (this.datasource.photo) {

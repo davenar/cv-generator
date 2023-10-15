@@ -14,7 +14,7 @@
 
   <div class="row">
 
-
+    <!-- INTESTAZIONE -->
     <div class="cv-title-container">
       <div class="info-container">
         <h1 class="name-container mb-0">{{datasource.firstName}} {{datasource.lastName}}</h1>
@@ -27,17 +27,26 @@
       </div>
     </div>
 
-
+    <!-- CORPO -->
     <div class="row">
+
+
+      <!-- COLONNA SINISTRA (ESPERIENZA, EDUCAZIONE) -->
       <div class="col-8 pt-2">
         <div class="mt-2">
 
           una serie di roba
         </div>
       </div>
+
+
+
+
+      <!-- COLONNA DESTRA (CONTATTI, SKILL, LINGUE, SOCIAL) -->
       <div class="col-4 pt-2" style="border-left: 2px solid lightgrey;">
         <div class="mt-3">
 
+          <!-- CONTATTI -->
           <div class="contacts-container mb-4">
             <div *ngIf="datasource.birthDate" class="contact">
               <i class="bi bi-square-fill"></i>
@@ -70,11 +79,17 @@
                 {{datasource.website}}
               </span>
             </div>
+            <div *ngIf="datasource.socialAccounts.github" class="contact">
+              <i class="bi bi-github"></i>
+              <span>
+                {{datasource.socialAccounts.github}}
+              </span>
+            </div>
           </div>
 
-
+          <!-- SKILL -->
           <div *ngIf="datasource.skills.length > 0" class="skills-container">
-            <h4 class="skills-title">Skills</h4>
+            <h4 class="skills-title">Skill</h4>
             <dl>
               <dt *ngFor="let skill of datasource.skills">
                 {{skill.name}}
@@ -82,7 +97,7 @@
             </dl>
           </div>
 
-
+          <!-- LINGUE -->
           <div *ngIf="datasource.spokenLanguages.length > 0" class="languages-container">
             <h4 class="languages-title">Lingue</h4>
             <dl>
@@ -95,6 +110,53 @@
                 </span>
               </dt>
             </dl>
+          </div>
+
+          <!-- SOCIAL -->
+          <div *ngIf="!isSocialAccountsEmpty(datasource.socialAccounts)" class="socials-container">
+            <h4 class="socials-title">Social</h4>
+            <div class="social-labels-container">
+              <div *ngIf="datasource.socialAccounts.linkedin" class="social-item">
+                <i class="bi bi-linkedin"></i>
+                <span class="ms-1">{{datasource.socialAccounts.linkedin}}</span>
+              </div>
+              <!-- <div *ngIf="datasource.socialAccounts.github" class="social-item">
+                <i class="bi bi-github"></i>
+                <span class="ms-1">{{datasource.socialAccounts.github}}</span>
+              </div> -->
+              <div *ngIf="datasource.socialAccounts.twitter" class="social-item">
+                <i class="bi bi-twitter"></i>
+                <span class="ms-1">{{datasource.socialAccounts.twitter}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.facebook" class="social-item">
+                <i class="bi bi-facebook"></i>
+                <span class="ms-1">{{datasource.socialAccounts.facebook}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.instagram" class="social-item">
+                <i class="bi bi-instagram"></i>
+                <span class="ms-1">{{datasource.socialAccounts.instagram}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.whatsapp" class="social-item">
+                <i class="bi bi-whatsapp"></i>
+                <span class="ms-1">{{datasource.socialAccounts.whatsapp}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.telegram" class="social-item">
+                <i class="bi bi-telegram"></i>
+                <span class="ms-1">{{datasource.socialAccounts.telegram}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.youtube" class="social-item">
+                <i class="bi bi-youtube"></i>
+                <span class="ms-1">{{datasource.socialAccounts.youtube}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.twitch" class="social-item">
+                <i class="bi bi-twitch"></i>
+                <span class="ms-1">{{datasource.socialAccounts.twitch}}</span>
+              </div>
+              <div *ngIf="datasource.socialAccounts.pinterest" class="social-item">
+                <i class="bi bi-pinterest"></i>
+                <span class="ms-1">{{datasource.socialAccounts.pinterest}}</span>
+              </div>
+            </div>
           </div>
 
 

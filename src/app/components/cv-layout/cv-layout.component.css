@@ -60,6 +60,17 @@ dt {
   color: var(--cv-primary);
 }
 
+.socials-title {
+  margin-bottom: 0px;
+  color: var(--cv-primary);
+}
+
+.social-labels-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 /*#region A4 Sheet Management*/
 .a4-div {
   width: 90%;
