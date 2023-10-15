@@ -23,17 +23,37 @@ export class CvFormComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 
+  // onImageSelected(event: any) {
+  //   const file = event.target.files[0];
+  //   if (file) {
+  //     const allowedTypes = ['image/jpeg', 'image/png'];
+  //     if (allowedTypes.includes(file.type)) {
+  //       const imageFile: File = event.target.files[0];
+  //       const imgUrl = this.getObjectURL(imageFile);
+  //       console.log(imgUrl);
+  //       this.cv.photo = imgUrl;
+  //     }
+  //     else {
+  //       // Tipo di file non valido, mostra un messaggio all'utente.
+  //       alert('Tipo di file non supportato. Scegli un file PNG o JPG.');
+  //     }
+  //   }
+  // }
+
   onImageSelected(event: any) {
     const file = event.target.files[0];
     if (file) {
       const allowedTypes = ['image/jpeg', 'image/png'];
       if (allowedTypes.includes(file.type)) {
-        const imageFile: File = event.target.files[0];
-        const imgUrl = this.getObjectURL(imageFile);
-        console.log(imgUrl);
-        this.cv.photo = imgUrl;
-      }
-      else {
+        const reader = new FileReader();
+
+        reader.onload = (e: any) => {
+          const base64Image = e.target.result;
+          this.cv.photo = base64Image;
+        };
+
+        reader.readAsDataURL(file);
+      } else {
         // Tipo di file non valido, mostra un messaggio all'utente.
         alert('Tipo di file non supportato. Scegli un file PNG o JPG.');
       }

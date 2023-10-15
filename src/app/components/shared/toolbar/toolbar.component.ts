@@ -41,7 +41,7 @@ export class ToolbarComponent {
             this.cv = JSON.parse(jsonText) as CVModel;
             console.log('File JSON caricato con successo:', this.cv);
 
-            this.cv.photo = ''; // TODO: gestire salvataggio immagine
+            //this.cv.photo = ''; // TODO: gestire salvataggio immagine
             this.cvLoaded.emit(this.cv);
 
           } catch (error) {
