@@ -40,7 +40,6 @@
             <h2 class="experience-section-title">
               Esperienza
             </h2>
-
             <div *ngFor="let experience of datasource.experience">
               <!-- TITOLO ESPERIENZA -->
               <h4 class="experience-title" *ngIf="experience.companyName || experience.title">
@@ -71,24 +70,58 @@
                   {{experience.location}}
                 </span>
               </h6>
-
               <!-- DESCRIZIONE ESPERIENZA -->
               <div *ngIf="experience.description">
                 <p>
                   {{experience.description}}
                 </p>
               </div>
-
-
-
             </div>
+          </div>
 
-
-
+          <!-- ISTRUZIONE -->
+          <div *ngIf="datasource.education.length > 0" class="education-container mb-4">
+            <h2 class="education-section-title">
+              Istruzione
+            </h2>
+            <div *ngFor="let education of datasource.education">
+              <!-- TITOLO ISTRUZIONE -->
+              <h4 class="education-title" *ngIf="education.title">
+                <span>
+                  {{education.title}}
+                </span>
+              </h4>
+              <!-- DATA E LUOGO ISTRUZIONE -->
+              <h6 class="education-title">
+                <i class="bi bi-calendar3"></i>
+                <span *ngIf="education.startYear">
+                  {{education.startYear}}
+                </span>
+                <span>
+                  {{education.startYear && education.endYear ? "-" : "~"}}
+                </span>
+                <span *ngIf="education.endYear">
+                  {{education.endYear}}
+                </span>
+                <span *ngIf="education.location" class="ms-4">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  {{education.location}}
+                </span>
+                <span *ngIf="education.score" class="ms-4">
+                  <i class="bi bi-bullseye"></i>
+                  {{education.score}}
+                </span>
+              </h6>
+              <!-- DESCRIZIONE ISTRUZIONE -->
+              <div *ngIf="education.description">
+                <p>
+                  {{education.description}}
+                </p>
+              </div>
+            </div>
           </div>
 
 
-          una serie di roba
         </div>
       </div>
 

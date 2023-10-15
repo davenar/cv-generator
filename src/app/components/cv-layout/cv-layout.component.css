@@ -51,11 +51,21 @@ dt {
 }
 
 .experience-section-title {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: var(--cv-primary);
 }
 
 .experience-title {
+  margin-bottom: 0px;
+  color: var(--cv-primary);
+}
+
+.education-section-title {
+  margin-bottom: 5px;
+  color: var(--cv-primary);
+}
+
+.education-title {
   margin-bottom: 0px;
   color: var(--cv-primary);
 }
