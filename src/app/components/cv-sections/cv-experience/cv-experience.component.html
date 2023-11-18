@@ -2,12 +2,13 @@
 
   <!-- CARD NUOVA ESPERIENZA -->
   <div class="col-3">
-    <div class="card mb-3" style="border: 2px dashed var(--bs-secondary); background-color: whitesmoke;">
+    <div class="card mb-3" style="border: 2px dashed var(--bs-primary);">
       <div class="card-body">
         <h5 class="card-title">Aggiungi Nuova Esperienza</h5>
         <div class="form-group">
           <label>Azienda:</label>
-          <input [(ngModel)]="experience.companyName" type="text" class="form-control mb-2" placeholder="Inserisci Azienda">
+          <input [(ngModel)]="experience.companyName" type="text" class="form-control mb-2"
+            placeholder="Inserisci Azienda">
         </div>
         <div class="form-group">
           <label>Titolo:</label>
@@ -51,6 +52,11 @@
     <div class="card mb-3">
       <div class="card-body">
         <h5 class="card-title">Esperienza Precedente</h5>
+        <div class="form-group">
+          <label>Azienda:</label>
+          <input [(ngModel)]="previousExp.companyName" type="text" class="form-control mb-2"
+            placeholder="Inserisci Azienda">
+        </div>
         <div class="form-group">
           <label>Titolo:</label>
           <input [(ngModel)]="previousExp.title" type="text" class="form-control mb-2" placeholder="Inserisci Titolo">
