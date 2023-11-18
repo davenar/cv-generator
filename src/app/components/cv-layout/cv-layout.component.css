@@ -11,6 +11,7 @@
 
 dt {
   font-weight: normal;
+  color: black;
 }
 
 .cv-title-container {
@@ -78,6 +79,7 @@ dt {
   font-weight: bold;
   font-size: 14px;
   line-height: 1.25;
+  color: black;
 }
 
 .skills-title {
@@ -104,10 +106,12 @@ dt {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  color: black;
 }
 
 .contacts-container {
   font-size: 14px;
+  color: black;
 }
 
 .skills-container {
@@ -133,12 +137,14 @@ dt {
 .experience-description {
   font-style: italic;
   line-height: 1.25;
+  color: black;
 }
 
 .education-description {
   font-size: 14px;
   font-style: italic;
   line-height: 1.25;
+  color: black;
 }
 
 /*#region A4 Sheet Management*/
@@ -162,7 +168,7 @@ dt {
 
 @media print {
   body {
-    background-color: white;
+    background-color: white !important;
   }
 
   .a4-div {
