@@ -70,13 +70,14 @@ dt {
 }
 
 .education-section-title {
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   color: var(--cv-primary);
 }
 
 .education-title {
-  margin-bottom: 0px;
-  color: var(--cv-primary);
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.25;
 }
 
 .skills-title {
@@ -134,11 +135,8 @@ dt {
   line-height: 1.25;
 }
 
-.education-container {
-  font-size: 14px;
-}
-
 .education-description {
+  font-size: 14px;
   font-style: italic;
   line-height: 1.25;
 }
@@ -160,7 +158,6 @@ dt {
   content: "";
   display: block;
   padding-top: calc(297mm / 210mm * 100%);
-  /* Maintain A4 proportions */
 }
 
 @media print {
