@@ -58,6 +58,9 @@ export class ToolbarComponent {
   }
 
   printCV() {
+    window.addEventListener("beforeprint", (event) => {
+      alert("Per un risultato di stampa ottimale si consiglia di abilitare la Grafica in Background e di settare i margini su \"Nessuno\"");
+    });
     window.print();
   }
 }
