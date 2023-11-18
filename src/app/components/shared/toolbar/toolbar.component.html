@@ -10,6 +10,11 @@
   </div>
   <div class="toolbar-subcontainer">
 
+    <button class="btn btn-outline-light" (click)="toggleTheme()">
+      <i *ngIf="isDarkMode" class="bi bi-brightness-high-fill"></i>
+      <i *ngIf="!isDarkMode" class="bi bi-moon-fill"></i>
+    </button>
+
     <button class="btn btn-outline-light" (click)="uploadJson.click()">
       <i class="bi bi-file-arrow-up-fill"></i>
       CARICA CV

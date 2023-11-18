@@ -11,6 +11,7 @@
 
 dt {
   font-weight: normal;
+  color: black;
 }
 
 .cv-title-container {
@@ -27,10 +28,14 @@ dt {
 }
 
 .name-container {
-  white-space: nowrap; /* Impedisce il testo di andare a capo */
-  overflow: hidden; /* Nasconde il testo oltre il contenitore */
-  text-overflow: ellipsis; /* Aggiunge l'ellissi (...) */
-  max-width: 95%; /* Imposta la larghezza massima desiderata */
+  white-space: nowrap;
+  /* Impedisce il testo di andare a capo */
+  overflow: hidden;
+  /* Nasconde il testo oltre il contenitore */
+  text-overflow: ellipsis;
+  /* Aggiunge l'ellissi (...) */
+  max-width: 95%;
+  /* Imposta la larghezza massima desiderata */
 }
 
 .image-container {
@@ -42,11 +47,16 @@ dt {
 }
 
 .image-container img {
-  max-width: 100%; /* Assicurati che l'immagine non superi la larghezza del contenitore */
-  border-radius: 50%; /* Crea il cerchio */
-  object-fit: cover; /* Mantieni l'immagine all'interno del cerchio */
-  height: 110px; /* Altezza del cerchio (puoi regolare questa altezza come desideri) */
-  width: 110px; /* Larghezza del cerchio (stessa altezza per fare un cerchio) */
+  max-width: 100%;
+  /* Assicurati che l'immagine non superi la larghezza del contenitore */
+  border-radius: 50%;
+  /* Crea il cerchio */
+  object-fit: cover;
+  /* Mantieni l'immagine all'interno del cerchio */
+  height: 110px;
+  /* Altezza del cerchio (puoi regolare questa altezza come desideri) */
+  width: 110px;
+  /* Larghezza del cerchio (stessa altezza per fare un cerchio) */
   border: 3px solid var(--cv-primary);
 }
 
@@ -61,13 +71,15 @@ dt {
 }
 
 .education-section-title {
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   color: var(--cv-primary);
 }
 
 .education-title {
-  margin-bottom: 0px;
-  color: var(--cv-primary);
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.25;
+  color: black;
 }
 
 .skills-title {
@@ -94,12 +106,52 @@ dt {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  color: black;
+}
+
+.contacts-container {
+  font-size: 14px;
+  color: black;
+}
+
+.skills-container {
+  font-size: 14px;
+}
+
+.certifications-container {
+  font-size: 14px;
+}
+
+.languages-container {
+  font-size: 14px;
+}
+
+.socials-container {
+  font-size: 14px;
+}
+
+.experience-container {
+  font-size: 14px;
+}
+
+.experience-description {
+  font-style: italic;
+  line-height: 1.25;
+  color: black;
+}
+
+.education-description {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.25;
+  color: black;
 }
 
 /*#region A4 Sheet Management*/
 .a4-div {
   width: 90%;
-  max-width: 800px; /* Limiting the maximum width */
+  max-width: 800px;
+  /* Limiting the maximum width */
   margin: 0 auto;
   padding: 20px;
   background-color: white;
@@ -111,12 +163,12 @@ dt {
 .a4-div:before {
   content: "";
   display: block;
-  padding-top: calc(297mm / 210mm * 100%); /* Maintain A4 proportions */
+  padding-top: calc(297mm / 210mm * 100%);
 }
 
 @media print {
   body {
-    background-color: white;
+    background-color: white !important;
   }
 
   .a4-div {
@@ -127,5 +179,5 @@ dt {
     margin-top: 20px;
   }
 }
-/*#endregion*/
 
+/*#endregion*/

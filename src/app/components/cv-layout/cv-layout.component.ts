@@ -27,7 +27,9 @@ export class CvLayoutComponent implements OnInit, OnDestroy {
   }
 
   isSocialAccountsEmpty(accounts: SocialAccounts): boolean {
-    return Object.keys(accounts).length === 0;
+    const allAccounts = Object.entries(accounts);
+    const filteredAccounts = allAccounts.filter(([key, value]) => key !== 'github' && value !== null && value.trim() !== '');
+    return filteredAccounts.length === 0;
   }
 
   ngOnDestroy() {
