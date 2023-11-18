@@ -33,7 +33,7 @@
 
           <!-- ESPERIENZA -->
           <div *ngIf="datasource.experience.length > 0" class="experience-container mb-4">
-            <h2 class="experience-section-title">
+            <h2 class="experience-section-title fw-bold">
               Esperienza
             </h2>
             <div *ngFor="let experience of datasource.experience">
@@ -68,7 +68,7 @@
               </h6>
               <!-- DESCRIZIONE ESPERIENZA -->
               <div *ngIf="experience.description">
-                <p>
+                <p class="experience-description">
                   {{experience.description}}
                 </p>
               </div>
@@ -110,7 +110,7 @@
               </h6>
               <!-- DESCRIZIONE ISTRUZIONE -->
               <div *ngIf="education.description">
-                <p>
+                <p class="education-description">
                   {{education.description}}
                 </p>
               </div>
@@ -130,17 +130,17 @@
 
           <!-- CONTATTI -->
           <div class="contacts-container mb-4">
-            <div *ngIf="datasource.birthDate" class="contact">
-              <i class="bi bi-balloon-fill"></i>
-              <span>
-                {{ datasource.birthDate | date:'dd/MM/yyyy' }}
-              </span>
-            </div>
             <div *ngIf="datasource.address.city" class="contact">
               <i class="bi bi-geo-alt-fill"></i>
               <span>
                 {{datasource.address.streetName}} {{datasource.address.streetNumber}} {{datasource.address.zipCode}}
                 {{datasource.address.city}}
+              </span>
+            </div>
+            <div *ngIf="datasource.birthDate" class="contact">
+              <i class="bi bi-balloon-fill"></i>
+              <span>
+                {{ datasource.birthDate | date:'dd/MM/yyyy' }}
               </span>
             </div>
             <div *ngIf="datasource.phoneNumber" class="contact">
