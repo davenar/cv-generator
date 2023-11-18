@@ -13,8 +13,11 @@ import { CvSkillsComponent } from './components/cv-sections/cv-skills/cv-skills.
 import { CvSocialAccountsComponent } from './components/cv-sections/cv-social-accounts/cv-social-accounts.component';
 import { ToolbarComponent } from './components/shared/toolbar/toolbar.component';
 import { CvCertificationsComponent } from './components/cv-sections/cv-certifications/cv-certifications.component';
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeIt from '@angular/common/locales/it';
 
-
+registerLocaleData(localeIt);
 
 @NgModule({
   declarations: [
@@ -37,7 +40,7 @@ import { CvCertificationsComponent } from './components/cv-sections/cv-certifica
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'it-IT' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
