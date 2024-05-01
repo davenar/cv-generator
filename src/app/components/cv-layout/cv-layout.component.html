@@ -33,12 +33,12 @@
 
           <!-- ESPERIENZA -->
           <div *ngIf="datasource.experience.length > 0" class="experience-container mb-4">
-            <h2 class="experience-section-title fw-bold">
+            <h3 class="experience-section-title fw-bold">
               Esperienza
-            </h2>
+            </h3>
             <div *ngFor="let experience of datasource.experience">
               <!-- TITOLO ESPERIENZA -->
-              <h4 class="experience-title" *ngIf="experience.companyName || experience.title">
+              <h5 class="experience-title" *ngIf="experience.companyName || experience.title">
                 <span *ngIf="experience.companyName">
                   {{experience.companyName}}
                 </span>
@@ -48,9 +48,9 @@
                 <span *ngIf="experience.title">
                   {{experience.title}}
                 </span>
-              </h4>
+              </h5>
               <!-- DATA E LUOGO ESPERIENZA -->
-              <h6 class="experience-title">
+              <h6 class="experience-period-title">
                 <i class="bi bi-calendar3"></i>
                 <span *ngIf="experience.startDate">
                   {{experience.startDate | date:'MMM y'}}
@@ -130,7 +130,7 @@
 
           <!-- SKILL -->
           <div *ngIf="datasource.skills.length > 0" class="skills-container">
-            <h4 class="skills-title">Skill</h4>
+            <h5 class="skills-title">Skill</h5>
             <dl>
               <dt *ngFor="let skill of datasource.skills">
                 {{skill.name}}
@@ -140,7 +140,7 @@
 
           <!-- CERTIFICAZIONI -->
           <div *ngIf="datasource.certifications.length > 0" class="certifications-container">
-            <h4 class="certifications-title">Certificazioni</h4>
+            <h5 class="certifications-title">Certificazioni e Premi</h5>
             <dl>
               <dt *ngFor="let certification of datasource.certifications">
                 <span *ngIf="certification.vendor">
@@ -155,7 +155,7 @@
 
           <!-- LINGUE -->
           <div *ngIf="datasource.spokenLanguages.length > 0" class="languages-container">
-            <h4 class="languages-title">Lingue</h4>
+            <h5 class="languages-title">Lingue</h5>
             <dl>
               <dt *ngFor="let language of datasource.spokenLanguages">
                 <span>
@@ -170,7 +170,7 @@
 
           <!-- SOCIAL -->
           <div *ngIf="!isSocialAccountsEmpty(datasource.socialAccounts)" class="socials-container">
-            <h4 class="socials-title">Social</h4>
+            <h5 class="socials-title">Social</h5>
             <div class="social-labels-container">
               <div *ngIf="datasource.socialAccounts.linkedin" class="social-item">
                 <i class="bi bi-linkedin"></i>
@@ -218,7 +218,7 @@
 
         <!-- ISTRUZIONE  -->
         <div *ngIf="datasource.education.length > 0" class="position-absolute bottom-0 mb-3 mt-auto">
-          <h4 class="education-section-title">Istruzione</h4>
+          <h5 class="education-section-title">Istruzione</h5>
           <div *ngFor="let education of datasource.education" class="mb-1">
             <div *ngIf="education.location">
               <p class="education-title mb-0">

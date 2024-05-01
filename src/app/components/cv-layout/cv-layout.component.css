@@ -14,6 +14,10 @@ dt {
   color: black;
 }
 
+dl {
+  line-height: 1.2;
+}
+
 .cv-title-container {
   background-color: var(--cv-primary);
   color: var(--cv-light);
@@ -68,6 +72,11 @@ dt {
 .experience-title {
   margin-bottom: 0px;
   color: var(--cv-primary);
+}
+
+.experience-period-title {
+  margin-bottom: 3px;
+  color: var(--cv-secondary);
 }
 
 .education-section-title {
